@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+
+<BorderPane prefHeight="589.0" prefWidth="483.0" stylesheets="@GameTheme.css" xmlns="http://javafx.com/javafx/8.0.111" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.controller.BlackJackController">
+   <top>
+      <Label prefHeight="18.0" prefWidth="78.0" text="BlackJack" BorderPane.alignment="CENTER" />
+   </top>
+   <bottom>
+      <Pane prefHeight="200.0" prefWidth="483.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button layoutX="356.0" layoutY="155.0" mnemonicParsing="false" text="Sit/Leave" />
+            <Button layoutX="14.0" layoutY="155.0" mnemonicParsing="false" text="Hit" />
+            <Button layoutX="93.0" layoutY="155.0" mnemonicParsing="false" text="Stand" />
+         </children>
+      </Pane>
+   </bottom>
+   <center>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <ImageView fitHeight="91.0" fitWidth="70.0" layoutX="6.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/b1fv.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="91.0" fitWidth="70.0" layoutX="5.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../img/26.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+   </center>
+   <right>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </right>
+   <left>
+      <Pane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER" />
+   </left>
+</BorderPane>
