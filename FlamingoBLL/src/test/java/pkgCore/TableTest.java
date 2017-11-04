@@ -4,19 +4,23 @@ import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-public class TableTest {
 
-	@Test
-	public void TestTable() {
+	
+	public class TableTest {
+		Table A = new Table();
+		Player one = new Player("Enoch",1);
+		Player two = new Player("Greg",2);
 		
-		Table t = new Table();
-		Player p1 = new Player("TJ", 1);
-		
-		t.AddPlayerToTable(p1);
-		
-		assertEquals(t.GetPlayerFromTable(p1),p1);
-		
-		t.RemovePlayerFromTable(p1);
+		@Test
+		public void test() {
+			
+			A.AddPlayerToTable(one);
+			A.AddPlayerToTable(two);
+			
+			assertEquals(one.getPlayerID(),A.GetPlayerFromTable(one).getPlayerID());
+			
+			A.RemovePlayerFromTable(one);
+			assertEquals(null,A.GetPlayerFromTable(one));
+		}
 	}
 
-}

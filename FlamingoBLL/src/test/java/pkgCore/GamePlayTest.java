@@ -11,29 +11,26 @@ import org.junit.Test;
 import pkgEnum.eGameType;
 
 public class GamePlayTest {
-
-	@Test
-	public void TestGamePlay() {
-		//HashMap<UUID, Player> GamePlayers = new HashMap<UUID, Player>();
-		GamePlay gp = new GamePlayBlackJack(eGameType.POKER);
-		Player p1 = new Player("TJ", 1);
-		Player p2 = new Player("Jon", 2);
-		ArrayList<Player> Players = new ArrayList<Player>();
-		Players.add(p1);
-		Players.add(p2);
-		
-		gp.AddPlayersToGame(Players);
+	Table t = new Table();
+	Player one = new Player("Enoch",1);
+	Player two = new Player("Greg",2);
 	
-		assertEquals(gp.GetPlayerInGame(p1),p1);
-		assertEquals(gp.GetPlayerInGame(p2),p2);
+	HashMap<UUID,Player> PlayersAtTable;
+	GamePlayBlackJack Fun = new GamePlayBlackJack(eGameType.BLACKJACK);
+	
+	@Test
+	public void Test() {
+		t.AddPlayerToTable(one);
+		t.AddPlayerToTable(two);
 		
-		gp.RemovePlayerFromGame(p1);
-		gp.RemovePlayerFromGame(p2);
+		PlayersAtTable = t.getPlayersInTable();
+		Fun.AddPlayersToGame(PlayersAtTable);
 		
+		assertEquals(Fun.getGamePlayers(),PlayersAtTable);
+		assertEquals(one.getPlayerID(),Fun.GetPlayerInGame(one).getPlayerID());
 		
-		
-		
-		
+		Fun.RemovePlayerFromGame(one);
+		assertEquals(null,Fun.GetPlayerInGame(one));
 		
 	}
 
